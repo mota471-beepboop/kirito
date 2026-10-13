@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c82cw6vasl0yc"]
+
+[ext_resource type="Texture2D" uid="uid://pyovgixfw8b1" path="res://Captura de tela 2026-10-03 190854.png" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://4v4t37k5jgcd" path="res://player.tscn" id="2_e2o6t"]
+
+[node name="game" type="Node2D" unique_id=197359531]
+
+[node name="background" type="Sprite2D" parent="." unique_id=353056545]
+position = Vector2(581, 425.75)
+scale = Vector2(1.2572503, 1.0473555)
+texture = ExtResource("1_80nbo")
+
+[node name="player" parent="." unique_id=1348410289 instance=ExtResource("2_e2o6t")]
+position = Vector2(51, 546)
