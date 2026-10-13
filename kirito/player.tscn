@@ -1,16 +1,19 @@
 [gd_scene format=3 uid="uid://4v4t37k5jgcd"]
 
-[ext_resource type="Texture2D" uid="uid://bdsoj6is4jtlb" path="res://icon.svg" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://brj3lamj7ap5v" path="res://scrpts/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://bve3jrlkoeiuw" path="res://verity_gui-removebg-preview.png" id="2_onrkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywrnh"]
-size = Vector2(127, 128)
+size = Vector2(117, 54)
 
 [node name="player" type="CharacterBody2D" unique_id=1348410289]
+script = ExtResource("1_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=463059934]
 position = Vector2(11, -3)
-texture = ExtResource("1_4flbx")
+texture = ExtResource("2_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=537679270]
-position = Vector2(12.5, -5)
+position = Vector2(7.5, -10)
 shape = SubResource("RectangleShape2D_ywrnh")
+one_way_collision = true
