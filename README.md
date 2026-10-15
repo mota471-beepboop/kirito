@@ -1,2 +1,4 @@
 # kirito
 Kirito é uma aventura de ação e exploração em um reino misterioso, onde você controla um herói ágil e habilidoso que enfrenta inimigos perigosos, descobre segredos escondidos e supera desafios mortais. Com combates rápidos, movimentos acrobáticos e habilidades incríveis, você precisa dominar suas técnicas, explorar cenários fascinantes e derrotar chefes poderosos em uma jornada cheia de mistérios, perigos e descobertas. Cada batalha exige precisão, estratégia e reflexos rápidos para sobreviver nesse mundo deslumbrante e implacável.
+MUDANCAS
+Agora da pra jogar volei de imaginacao!
