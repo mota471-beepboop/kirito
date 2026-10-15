@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed: float = 300.0
-@export var jump_velocity: float = -400.0
+@export var jump_velocity: float = -600.0
 
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -10,7 +10,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y = jump_velocity
 
 	var direction := Input.get_axis("ui_left", "ui_right")

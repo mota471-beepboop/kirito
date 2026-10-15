@@ -3,9 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://pyovgixfw8b1" path="res://Captura de tela 2026-10-03 190854.png" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://4v4t37k5jgcd" path="res://player.tscn" id="2_e2o6t"]
 [ext_resource type="Texture2D" uid="uid://bdsoj6is4jtlb" path="res://icon.svg" id="2_feb5d"]
+[ext_resource type="PackedScene" uid="uid://clkgs762yxllj" path="res://bola.tscn" id="3_fc0e3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2o6t"]
-size = Vector2(918.3313, 43.468018)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywrnh"]
+size = Vector2(1290, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o07i7"]
+size = Vector2(406, 874)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukdjs"]
+size = Vector2(30, 257)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1ruf"]
+size = Vector2(573, 67)
 
 [node name="game" type="Node2D" unique_id=197359531]
 
@@ -14,17 +24,61 @@ position = Vector2(581, 425.75)
 scale = Vector2(1.2572503, 1.0473555)
 texture = ExtResource("1_80nbo")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="background" unique_id=400235232]
+[node name="player" parent="." unique_id=1348410289 instance=ExtResource("2_e2o6t")]
+position = Vector2(59, 559)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="background/StaticBody2D" unique_id=1905172756]
-position = Vector2(-3.4092712, 191.1958)
-scale = Vector2(1.0000001, 1)
-shape = SubResource("RectangleShape2D_e2o6t")
+[node name="bola" parent="." unique_id=350476835 instance=ExtResource("3_fc0e3")]
+position = Vector2(9, -99)
 
-[node name="Sprite2D" type="Sprite2D" parent="background/StaticBody2D/CollisionShape2D" unique_id=155581910]
-position = Vector2(7.386215, 0.9547844)
-scale = Vector2(7.295187, 0.37296313)
+[node name="top wall" type="StaticBody2D" parent="." unique_id=1018107433]
+position = Vector2(874, -139)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top wall" unique_id=1067200771]
+position = Vector2(-285, 116.5)
+shape = SubResource("RectangleShape2D_ywrnh")
+
+[node name="chao wall" type="StaticBody2D" parent="." unique_id=1683373935]
+position = Vector2(879, 512)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chao wall" unique_id=1817596847]
+position = Vector2(-314, 124)
+shape = SubResource("RectangleShape2D_ywrnh")
+
+[node name="leftwall" type="StaticBody2D" parent="." unique_id=359388524]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftwall" unique_id=665579009]
+position = Vector2(-206, 427)
+shape = SubResource("RectangleShape2D_o07i7")
+
+[node name="rightwall" type="StaticBody2D" parent="." unique_id=1699265851]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightwall" unique_id=1551507521]
+position = Vector2(1199, 444)
+shape = SubResource("RectangleShape2D_o07i7")
+
+[node name="rede" type="StaticBody2D" parent="." unique_id=1477564394]
+position = Vector2(594, 575)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rede" unique_id=216789162]
+position = Vector2(-8, -14)
+shape = SubResource("RectangleShape2D_ukdjs")
+
+[node name="Sprite2D" type="Sprite2D" parent="rede" unique_id=1405348257]
+position = Vector2(-12.500008, -20.500032)
+scale = Vector2(0.25781262, 2.179687)
 texture = ExtResource("2_feb5d")
 
-[node name="player" parent="." unique_id=1348410289 instance=ExtResource("2_e2o6t")]
-position = Vector2(51, 546)
+[node name="area p1" type="Area2D" parent="." unique_id=1496514108]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area p1" unique_id=1705502903]
+position = Vector2(282, 640)
+shape = SubResource("RectangleShape2D_r1ruf")
+debug_color = Color(0.9652254, 0.18919209, 0, 0.41960785)
+
+[node name="area p2" type="Area2D" parent="." unique_id=1432284754]
+position = Vector2(653, 658)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area p2" unique_id=809240056]
+position = Vector2(230, -16)
+shape = SubResource("RectangleShape2D_r1ruf")
+debug_color = Color(0.92302066, 0.07890985, 0.6514874, 0.41960785)
