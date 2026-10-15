@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://4v4t37k5jgcd" path="res://player.tscn" id="2_e2o6t"]
 [ext_resource type="Texture2D" uid="uid://bdsoj6is4jtlb" path="res://icon.svg" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://clkgs762yxllj" path="res://bola.tscn" id="3_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://b38lkf04hhn85" path="res://player_2.tscn" id="5_7jktm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywrnh"]
 size = Vector2(1290, 57)
@@ -53,7 +54,7 @@ shape = SubResource("RectangleShape2D_o07i7")
 [node name="rightwall" type="StaticBody2D" parent="." unique_id=1699265851]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rightwall" unique_id=1551507521]
-position = Vector2(1199, 444)
+position = Vector2(1368, 439)
 shape = SubResource("RectangleShape2D_o07i7")
 
 [node name="rede" type="StaticBody2D" parent="." unique_id=1477564394]
@@ -82,3 +83,6 @@ position = Vector2(653, 658)
 position = Vector2(230, -16)
 shape = SubResource("RectangleShape2D_r1ruf")
 debug_color = Color(0.92302066, 0.07890985, 0.6514874, 0.41960785)
+
+[node name="player2" parent="." unique_id=822746950 instance=ExtResource("5_7jktm")]
+position = Vector2(805, 518)
