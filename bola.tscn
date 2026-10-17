@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://clkgs762yxllj"]
+
+[ext_resource type="Script" uid="uid://cyx7qbjjk3vll" path="res://scrpts/bola.gd" id="1_6ycda"]
+[ext_resource type="Texture2D" uid="uid://cbcq177dbmdnw" path="res://imagens/bola-removebg-preview.png" id="2_6ycda"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ywrnh"]
+radius = 71.80529
+
+[node name="bola" type="CharacterBody2D" unique_id=350476835]
+script = ExtResource("1_6ycda")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1880692232]
+position = Vector2(568, 437)
+texture = ExtResource("2_6ycda")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=343889266]
+position = Vector2(579, 422)
+shape = SubResource("CircleShape2D_ywrnh")

@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://c82cw6vasl0yc"]
+
+[ext_resource type="Texture2D" uid="uid://pyovgixfw8b1" path="res://imagens/Captura de tela 2026-10-03 190854.png" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://bmwj7jcylpr4t" path="res://scrpts/game.gd" id="1_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://4v4t37k5jgcd" path="res://player.tscn" id="2_e2o6t"]
+[ext_resource type="Texture2D" uid="uid://bdsoj6is4jtlb" path="res://imagens/icon.svg" id="2_feb5d"]
+[ext_resource type="PackedScene" uid="uid://clkgs762yxllj" path="res://bola.tscn" id="3_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://b38lkf04hhn85" path="res://player_2.tscn" id="5_7jktm"]
+[ext_resource type="Texture2D" uid="uid://dnwvgmep8ppya" path="res://imagens/fundo.png" id="6_ryrav"]
+[ext_resource type="Texture2D" uid="uid://11tpsxexedt6" path="res://imagens/fundo_vermelho.png" id="7_eow3j"]
+
+[sub_resource type="FontVariation" id="FontVariation_o07i7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ywrnh"]
+font = SubResource("FontVariation_o07i7")
+font_size = 128
+font_color = Color(1, 1, 0, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_r1ruf"]
+font_size = 128
+font_color = Color(1, 0.007843138, 0, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywrnh"]
+size = Vector2(1167.5, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o07i7"]
+size = Vector2(406, 874)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukdjs"]
+size = Vector2(30, 257)
+
+[node name="game" type="Node2D" unique_id=197359531]
+script = ExtResource("1_j5wjh")
+
+[node name="background" type="Sprite2D" parent="." unique_id=353056545]
+position = Vector2(581, 425.75)
+scale = Vector2(1.2572503, 1.0473555)
+texture = ExtResource("1_80nbo")
+
+[node name="pontos1" type="Label" parent="." unique_id=699807518]
+offset_left = 66.0
+offset_top = 210.0
+offset_right = 373.0
+offset_bottom = 406.0
+text = "0"
+label_settings = SubResource("LabelSettings_ywrnh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pontos2" type="Label" parent="." unique_id=1641284650]
+offset_left = 642.0
+offset_top = 130.0
+offset_right = 1199.0
+offset_bottom = 455.0
+text = "0"
+label_settings = SubResource("LabelSettings_r1ruf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="player" parent="." unique_id=1348410289 instance=ExtResource("2_e2o6t")]
+z_index = 1
+position = Vector2(49, 475)
+
+[node name="player2" parent="." unique_id=822746950 instance=ExtResource("5_7jktm")]
+z_index = 1
+position = Vector2(805, 518)
+
+[node name="bola" parent="." unique_id=350476835 instance=ExtResource("3_fc0e3")]
+z_index = 1
+position = Vector2(9, -99)
+
+[node name="top wall" type="StaticBody2D" parent="." unique_id=1018107433]
+position = Vector2(874, -139)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top wall" unique_id=1067200771]
+position = Vector2(-291.75, 106)
+shape = SubResource("RectangleShape2D_ywrnh")
+
+[node name="chao wall1" type="StaticBody2D" parent="." unique_id=1683373935]
+position = Vector2(879, 512)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chao wall1" unique_id=1817596847]
+position = Vector2(-629, 116)
+shape = SubResource("RectangleShape2D_ywrnh")
+
+[node name="chao wall2" type="StaticBody2D" parent="." unique_id=1075348802]
+position = Vector2(879, 512)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chao wall2" unique_id=873290808]
+position = Vector2(46, 114)
+shape = SubResource("RectangleShape2D_ywrnh")
+
+[node name="leftwall" type="StaticBody2D" parent="." unique_id=359388524]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftwall" unique_id=665579009]
+position = Vector2(-206, 427)
+shape = SubResource("RectangleShape2D_o07i7")
+
+[node name="rightwall" type="StaticBody2D" parent="." unique_id=1699265851]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightwall" unique_id=1551507521]
+position = Vector2(1368, 439)
+shape = SubResource("RectangleShape2D_o07i7")
+
+[node name="rede" type="StaticBody2D" parent="." unique_id=1477564394]
+position = Vector2(594, 575)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rede" unique_id=216789162]
+position = Vector2(-8, -14)
+shape = SubResource("RectangleShape2D_ukdjs")
+
+[node name="Sprite2D" type="Sprite2D" parent="rede" unique_id=1405348257]
+position = Vector2(-12.500008, -20.500032)
+scale = Vector2(0.25781262, 2.179687)
+texture = ExtResource("2_feb5d")
+
+[node name="area p1" type="Area2D" parent="." unique_id=1496514108]
+
+[node name="area p2" type="Area2D" parent="." unique_id=1432284754]
+position = Vector2(653, 658)
+
+[node name="alien maluco" type="Sprite2D" parent="." unique_id=1945777384]
+position = Vector2(66, 74)
+scale = Vector2(0.456, 0.254)
+texture = ExtResource("6_ryrav")
+
+[node name="alien maluco2" type="Sprite2D" parent="." unique_id=1068438746]
+position = Vector2(1052, 76.00001)
+scale = Vector2(0.456, 0.254)
+texture = ExtResource("7_eow3j")
+flip_h = true

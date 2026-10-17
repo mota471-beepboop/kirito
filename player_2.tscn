@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b38lkf04hhn85"]
+
+[ext_resource type="Script" uid="uid://kea3tee3kqar" path="res://scrpts/player_2.gd" id="1_8xjnt"]
+[ext_resource type="Texture2D" uid="uid://clutca3jb0vbp" path="res://imagens/DESENH0_MOTA-removebg-preview.png" id="2_8xjnt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l8mnm"]
+radius = 71.02816
+
+[node name="player2" type="CharacterBody2D" unique_id=1348410289]
+script = ExtResource("1_8xjnt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=463059934]
+position = Vector2(26.749998, 4.924244)
+scale = Vector2(1.3632813, 1.3136836)
+texture = ExtResource("2_8xjnt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=537679270]
+position = Vector2(28, 22)
+shape = SubResource("CircleShape2D_l8mnm")
+one_way_collision = true
